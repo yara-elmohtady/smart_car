@@ -24,3 +24,8 @@
 
 #define ULTRASONIC_B2_ECHO 32
 #define ULTRASONIC_B2_TRIGGER 33
+
+
+// GPS Pins
+#define GPS_RXPin 9
+#define GPS_TXPin 12
