@@ -1,6 +1,6 @@
 #include "Ultrasonic.h"
 #include "Pinout.h"
-
+#include "Arduino.h"
 
 //define sound speed in cm/uS
 
@@ -26,7 +26,7 @@ void Ultrasonic_init() {
     pinMode(ULTRASONIC_B2_ECHO, INPUT); // Sets the echoPin as an Input
 }
 
-void Ultrasonic_Scan_Front() {
+double * Ultrasonic_Scan_Front(double sensor[]) {
     long duration1,duration2,duration3;
     float distanceCm1,distanceCm2,distanceCm3;
 
@@ -40,9 +40,12 @@ void Ultrasonic_Scan_Front() {
     distanceCm2 = duration2 * SOUND_SPEED/2;
     distanceCm3 = duration3 * SOUND_SPEED/2;
 
-    Ultrasonic_Print_Distance(distanceCm1);
-    Ultrasonic_Print_Distance(distanceCm2);
-    Ultrasonic_Print_Distance(distanceCm3);
+    sensor[0] = distanceCm1;
+    sensor[1] = distanceCm2;
+    sensor[2] = distanceCm3;
+
+    return sensor ;
+    
 
 }
 
@@ -68,15 +71,8 @@ void Ultrasonic_Trigger_Front()
 
 }
 
-void Ultrasonic_Print_Distance(float distanceCm)
-{
-    // Prints the distance in the Serial Monitor
-    Serial.print("Distance (cm): ");
-    Serial.println(distanceCm);
-}
 
-
-void Ultrasonic_Scan_Back() 
+double * Ultrasonic_Scan_Back(double sensor[]) 
 {
   long duration4,duration5;
   float distanceCm4,distanceCm5;
@@ -89,8 +85,10 @@ void Ultrasonic_Scan_Back()
     distanceCm4 = duration4 * SOUND_SPEED/2;
     distanceCm5 = duration5 * SOUND_SPEED/2;
 
-    Ultrasonic_Print_Distance(distanceCm4);
-    Ultrasonic_Print_Distance(distanceCm5);
+    sensor[0] = distanceCm4;
+    sensor[1] = distanceCm5;
+
+    return sensor ;
 }
 
 void Ultrasonic_Trigger_Back()

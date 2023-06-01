@@ -6,9 +6,9 @@
 
 extern void Ultrasonic_init();
 extern void Ultrasonic_Scan_Front();
-void Ultrasonic_Trigger_Front();
+extern double * Ultrasonic_Trigger_Front(double sensor[]);
 void Ultrasonic_Print_Distance(float distanceCm);
-extern void Ultrasonic_Scan_Back();
+extern double * Ultrasonic_Scan_Back(double sensor[]);
 void Ultrasonic_Trigger_Back();
 
 
