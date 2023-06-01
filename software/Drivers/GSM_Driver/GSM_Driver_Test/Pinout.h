@@ -24,3 +24,8 @@
 
 #define ULTRASONIC_B2_ECHO 32
 #define ULTRASONIC_B2_TRIGGER 33
+
+
+// GSM PINS
+#define GSM_RX_PIN 13
+#define GSM_RX_PIN 11
