@@ -24,3 +24,7 @@
 
 #define ULTRASONIC_B2_ECHO 32
 #define ULTRASONIC_B2_TRIGGER 33
+
+// Voltage_Sensor
+
+#define VOLTAGR_SENSOR_PIN A0
