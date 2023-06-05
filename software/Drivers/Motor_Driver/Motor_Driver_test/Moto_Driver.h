@@ -14,7 +14,8 @@ extern void Car_motion_turn_left();
 extern void Car_motion_reverse_right();
 extern void Car_motion_reverse_left();
 extern void Car_motion_stop();
+/*
 extern void Car_motion_acceleration_full();
 extern void Car_motion_acceleration_Right();
-extern void Car_motion_acceleration_Left();
+extern void Car_motion_acceleration_Left();*/
 #endif //C_PROGRAMMING_MOTO_DRIVER_H
