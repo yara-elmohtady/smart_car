@@ -2,21 +2,29 @@
 
 
 void setup() {
-pinMode(16,OUTPUT) ; // Motor in1
-pinMode(5,OUTPUT) ; //  Motor in2
+pinMode(D3,OUTPUT) ; // Motor in1
+pinMode(D4,OUTPUT) ; //  Motor in2
 Serian.begin(9600);
 }
 
 void loop() {
 
-  Serial.println("Motor Move Forward") ;
-  digitalWrite(16,HIGH) ; // DIR Motor 1
-  digitalWrite(5,HIGH) ; // DIR Motor 2
+  Serial.println("Option1") ;
+  digitalWrite(D3,HIGH) ; // DIR Motor 1
+  digitalWrite(D4,HIGH) ; // DIR Motor 2
   
-  delay(1000);
-  Serial.println("Motor Move Backword") ;
-  digitalWrite(16,LOW) ; // DIR Motor 1
-  digitalWrite(5,LOW) ; // DIR Motor 2
-  delay(1000);
+  delay(10000);
+  Serial.println("Option 2 ") ;
+  digitalWrite(D3,LOW) ; // DIR Motor 1
+  digitalWrite(D4,LOW) ; // DIR Motor 2
+  delay(10000);
+  Serial.println("Option 3") ;
+  digitalWrite(D3,HIGH) ; // DIR Motor 1
+  digitalWrite(D4,LOW) ; // DIR Motor 2
+  delay(10000);
+  Serial.println("Option 4") ;
+  digitalWrite(D3,LOW) ; // DIR Motor 1
+  digitalWrite(D4,HIGH) ; // DIR Motor 2
+  delay(10000);
 
 }
