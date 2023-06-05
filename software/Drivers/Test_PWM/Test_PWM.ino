@@ -5,9 +5,11 @@ void setup() {
 pinMode(D3,OUTPUT) ; // Motor in1
 pinMode(D4,OUTPUT) ; //  Motor in2
 Serian.begin(9600);
+
 }
 
 void loop() {
+
 
   Serial.println("Option1") ;
   digitalWrite(D3,HIGH) ; // DIR Motor 1
