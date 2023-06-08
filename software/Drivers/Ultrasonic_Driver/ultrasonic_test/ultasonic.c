@@ -9,7 +9,7 @@
 
 
 void Ultrasonic_init() {
-    //Serial.begin(115200); // Starts the serial communication
+    /*
     pinMode(ULTRASONIC_F1_TRIGGER, OUTPUT); // Sets the trigPin as an Output
     pinMode(ULTRASONIC_F1_ECHO, INPUT); // Sets the echoPin as an Input
 
@@ -18,16 +18,18 @@ void Ultrasonic_init() {
 
     pinMode(ULTRASONIC_F3_TRIGGER, OUTPUT); // Sets the trigPin as an Output
     pinMode(ULTRASONIC_F3_ECHO, INPUT); // Sets the echoPin as an Input
-
+*/
     pinMode(ULTRASONIC_B1_TRIGGER, OUTPUT); // Sets the trigPin as an Output
     pinMode(ULTRASONIC_B1_ECHO, INPUT); // Sets the echoPin as an Input
-
+/*
     pinMode(ULTRASONIC_B2_TRIGGER, OUTPUT); // Sets the trigPin as an Output
     pinMode(ULTRASONIC_B2_ECHO, INPUT); // Sets the echoPin as an Input
+*/
 }
-
-double * Ultrasonic_Scan_Front(double sensor[]) {
-    long duration1,duration2,duration3;
+/*
+Ultrasonic_Distance Ultrasonic_Scan_Front() {
+    struct Ultrasonic_Distance Front_Data ;
+    float duration1,duration2,duration3;
     float distanceCm1,distanceCm2,distanceCm3;
 
     Ultrasonic_Trigger_Front();
@@ -40,11 +42,11 @@ double * Ultrasonic_Scan_Front(double sensor[]) {
     distanceCm2 = duration2 * SOUND_SPEED/2;
     distanceCm3 = duration3 * SOUND_SPEED/2;
 
-    sensor[0] = distanceCm1;
-    sensor[1] = distanceCm2;
-    sensor[2] = distanceCm3;
+    Front_Data.Front_distance1 = distanceCm1;
+    Front_Data.Front_distance2 = distanceCm2;
+    Front_Data.Front_distance3 = distanceCm3;
 
-    return sensor ;
+    return Front_Data ;
     
 
 }
@@ -70,11 +72,12 @@ void Ultrasonic_Trigger_Front()
 
 
 }
+*/
 
-
-double * Ultrasonic_Scan_Back(double sensor[]) 
+Ultrasonic_Distance Ultrasonic_Scan_Back() 
 {
-  long duration4,duration5;
+  struct Ultrasonic_Distance Front_Data ;
+  float duration4,duration5;
   float distanceCm4,distanceCm5;
 
     Ultrasonic_Trigger_Back();
@@ -85,27 +88,27 @@ double * Ultrasonic_Scan_Back(double sensor[])
     distanceCm4 = duration4 * SOUND_SPEED/2;
     distanceCm5 = duration5 * SOUND_SPEED/2;
 
-    sensor[0] = distanceCm4;
-    sensor[1] = distanceCm5;
+    Front_Data.Back_distance1 = distanceCm4;
+    Front_Data.Back_distance2 = distanceCm5;
 
-    return sensor ;
+
+    return Front_Data ;
 }
 
 void Ultrasonic_Trigger_Back()
 {
     // Clears the trigPin
     digitalWrite(ULTRASONIC_B1_TRIGGER, LOW);
-    digitalWrite(ULTRASONIC_B2_TRIGGER, LOW);
+    //digitalWrite(ULTRASONIC_B2_TRIGGER, LOW);
 
     delayMicroseconds(2);
     // Sets the trigPin on HIGH state for 10 micro seconds
     digitalWrite(ULTRASONIC_B1_TRIGGER, HIGH);
-    digitalWrite(ULTRASONIC_B2_TRIGGER, HIGH);
+    //digitalWrite(ULTRASONIC_B2_TRIGGER, HIGH);
     delayMicroseconds(10);
     digitalWrite(ULTRASONIC_B1_TRIGGER, LOW);
-    digitalWrite(ULTRASONIC_B2_TRIGGER, LOW);
+    //digitalWrite(ULTRASONIC_B2_TRIGGER, LOW);
 }
 
 
-void Ultrasonic_Print_Distance(float distanceCm)
-{
+

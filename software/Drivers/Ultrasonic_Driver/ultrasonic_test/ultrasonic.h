@@ -5,11 +5,19 @@
 #define SOUND_SPEED 0.034
 
 extern void Ultrasonic_init();
-extern void Ultrasonic_Scan_Front();
-extern double * Ultrasonic_Trigger_Front(double sensor[]);
-void Ultrasonic_Print_Distance(float distanceCm);
-extern double * Ultrasonic_Scan_Back(double sensor[]);
+
+extern Ultrasonic_Distance Ultrasonic_Scan_Front();
+extern Ultrasonic_Distance Ultrasonic_Scan_Back();
+
+void Ultrasonic_Trigger_Front();
 void Ultrasonic_Trigger_Back();
 
+struct Ultrasonic_Distance {
+  float Front_distance1 = 0.0;
+  float Front_distance2 = 0.0;
+  float Front_distance3 = 0.0;\
 
+  float Back_distance1 = 0.0;
+  float Back_distance2 = 0.0;
+};
 #endif //ULTRASONIC_H
