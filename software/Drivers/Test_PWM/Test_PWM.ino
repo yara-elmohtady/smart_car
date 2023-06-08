@@ -1,5 +1,5 @@
 
-// in1,4 forward 
+// in1,4 forward
 // in2,3 backword
 
 void setup() {
@@ -29,7 +29,7 @@ void loop() {
   digitalWrite(D4,HIGH) ; // DIR Motor 2 motor stop
   digitalWrite(D5,HIGH) ; // DIR Motor 1 motor stop
   digitalWrite(D6,HIGH) ; // DIR Motor 2 motor stop
-  
+
   delay(10000);
   Serial.println("Forward") ;
   digitalWrite(D3,HIGH) ; // DIR Motor 1 motor stop
