@@ -74,25 +74,25 @@ void Ultrasonic_Trigger_Front()
 }
 */
 
-Ultrasonic_Distance Ultrasonic_Scan_Back() 
+struct Ultrasonic_Distance Ultrasonic_Scan_Back() 
 {
-  struct Ultrasonic_Distance Front_Data ;
-  float duration4,duration5;
-  float distanceCm4,distanceCm5;
+  struct Ultrasonic_Distance Back_Data ;
+  long duration4,duration5;
+  int distanceCm4,distanceCm5;
 
     Ultrasonic_Trigger_Back();
     // Reads the echoPin, returns the sound wave travel time in microseconds
-    duration4 = pulseIn(ULTRASONIC_B1_ECHO, HIGH);
-    duration5 = pulseIn(ULTRASONIC_B2_ECHO, HIGH);
+    duration4 = pulseIn(D6, HIGH,10);
+    //duration5 = pulseIn(ULTRASONIC_B2_ECHO, HIGH);
     // Calculate the distance
     distanceCm4 = duration4 * SOUND_SPEED/2;
-    distanceCm5 = duration5 * SOUND_SPEED/2;
+    //distanceCm5 = duration5 * SOUND_SPEED/2;
 
-    Front_Data.Back_distance1 = distanceCm4;
-    Front_Data.Back_distance2 = distanceCm5;
+    Back_Data.Back_distance1 = distanceCm4;
+    //Front_Data.Back_distance2 = distanceCm5;
 
 
-    return Front_Data ;
+    return  Back_Data;
 }
 
 void Ultrasonic_Trigger_Back()
@@ -109,6 +109,3 @@ void Ultrasonic_Trigger_Back()
     digitalWrite(ULTRASONIC_B1_TRIGGER, LOW);
     //digitalWrite(ULTRASONIC_B2_TRIGGER, LOW);
 }
-
-
-
