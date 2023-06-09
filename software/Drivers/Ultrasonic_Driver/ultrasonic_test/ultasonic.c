@@ -4,24 +4,7 @@
 
 //define sound speed in cm/uS
 
-void Ultrasonic_init() {
- 
-    pinMode(ULTRASONIC_F1_TRIGGER, OUTPUT); // Sets the trigPin as an Output
-    pinMode(ULTRASONIC_F1_ECHO, INPUT); // Sets the echoPin as an Input
 
-    pinMode(ULTRASONIC_F2_TRIGGER, OUTPUT); // Sets the trigPin as an Output
-    pinMode(ULTRASONIC_F2_ECHO, INPUT); // Sets the echoPin as an Input
-
-    pinMode(ULTRASONIC_F3_TRIGGER, OUTPUT); // Sets the trigPin as an Output
-    pinMode(ULTRASONIC_F3_ECHO, INPUT); // Sets the echoPin as an Input
-
-    pinMode(ULTRASONIC_B1_TRIGGER, OUTPUT); // Sets the trigPin as an Output
-    pinMode(ULTRASONIC_B1_ECHO, INPUT); // Sets the echoPin as an Input
-
-    pinMode(ULTRASONIC_B2_TRIGGER, OUTPUT); // Sets the trigPin as an Output
-    pinMode(ULTRASONIC_B2_ECHO, INPUT); // Sets the echoPin as an Input
-
-}
 
 struct Ultrasonic_Distance Ultrasonic_Scan_Front() {
     struct Ultrasonic_Distance Front_Data ;
@@ -82,6 +65,8 @@ void Ultrasonic_Trigger_Back()
 
 float get_ultrasonic_reading(int Trigger ,int Echo)
 {
+  long duration;
+  float distanceCm;
   digitalWrite(Trigger, LOW);
   delayMicroseconds(2);
   // Sets the trigPin on HIGH state for 10 micro seconds

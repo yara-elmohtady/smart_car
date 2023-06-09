@@ -4,14 +4,13 @@
 
 #define SOUND_SPEED 0.034
 
-extern void Ultrasonic_init();
 
 extern struct Ultrasonic_Distance Ultrasonic_Scan_Front();
 extern struct Ultrasonic_Distance Ultrasonic_Scan_Back();
 
 void Ultrasonic_Trigger_Front();
 void Ultrasonic_Trigger_Back();
-float get_ultrasonic_reading(int Trigger ,int Echo);
+
 
 struct Ultrasonic_Distance {
   float Front_distance1 ;
