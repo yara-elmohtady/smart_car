@@ -17,7 +17,7 @@ struct Ultrasonic_Distance {
   float Front_distance2 ;
   float Front_distance3 ;
 
-  int Back_distance1 ;
-  int Back_distance2 ;
+  float Back_distance1 ;
+  float Back_distance2 ;
 };
 #endif //ULTRASONIC_H
