@@ -57,13 +57,13 @@ struct Ultrasonic_Distance Ultrasonic_Scan_Back()
     Ultrasonic_Trigger_Back();
     // Reads the echoPin, returns the sound wave travel time in microseconds
     duration4 = pulseIn(D6, HIGH,10);
-    //duration5 = pulseIn(ULTRASONIC_B2_ECHO, HIGH);
+    duration5 = pulseIn(ULTRASONIC_B2_ECHO, HIGH);
     // Calculate the distance
     distanceCm4 = duration4 * SOUND_SPEED/2;
-    //distanceCm5 = duration5 * SOUND_SPEED/2;
+    distanceCm5 = duration5 * SOUND_SPEED/2;
 
     Back_Data.Back_distance1 = distanceCm4;
-    //Front_Data.Back_distance2 = distanceCm5;
+    Front_Data.Back_distance2 = distanceCm5;
 
 
     return  Back_Data;

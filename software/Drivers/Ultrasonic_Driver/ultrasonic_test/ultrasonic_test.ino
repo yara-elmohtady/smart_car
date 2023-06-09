@@ -15,6 +15,9 @@ void loop() {
   Ultrasonic_distance = Ultrasonic_Scan_Back() ;
   Serial.println("Back Sensor 1:");
   Serial.println(Ultrasonic_distance.Back_distance1);
+
+  Serial.println("Back Sensor 2:");
+  Serial.println(Ultrasonic_distance.Back_distance2);
   
 
 
