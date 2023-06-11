@@ -5,7 +5,13 @@
 #ifndef GPS_DRIVER_H
 #define GPS_DRIVER_H
 
-extern void GPS_init(SoftwareSerial GPS_Serial);
-extern float * GPS_Get_location(TinyGPSPlus gps);
 
+struct Location GPS_Get_location(TinyGPSPlus gps);
+
+struct Location
+{
+ float longtude ; 
+ float latitude ;
+
+};
 #endif //C_PROGRAMMING_GPS_DRIVER_H

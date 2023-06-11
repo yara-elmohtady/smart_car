@@ -2,21 +2,18 @@
 
 
 
-void GPS_init(SoftwareSerial GPS_Serial) {
-    GPS_Serial.begin(9600);
-}
-
-float * GPS_Get_location(TinyGPSPlus gps) {
+struct Location GPS_Get_location(TinyGPSPlus gps) {
     static float Position[2];
+    struct Location Cur_Location;
     while (ss.available() > 0){
     gps.encode(ss.read());
     if (gps.location.isUpdated()){
 
-      Position[0] = gps.location.lat();
+      Cur_Location.latitude = gps.location.lat();
   
-      Position[1] = gps.location.lng();
+      Cur_Location.longtude = gps.location.lng();
 
-      return Position;
+      return Cur_Location;
     }
   }
    
