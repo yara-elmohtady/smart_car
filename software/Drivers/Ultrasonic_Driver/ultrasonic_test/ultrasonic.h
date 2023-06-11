@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 
 #ifndef ULTRASONIC_H
 #define ULTRASONIC_H
@@ -21,3 +23,4 @@ struct Ultrasonic_Distance {
   float Back_distance2 ;
 };
 #endif //ULTRASONIC_H
+>>>>>>> e22d256183e34a1c872adb2a35dcb0d9a1cb279b
