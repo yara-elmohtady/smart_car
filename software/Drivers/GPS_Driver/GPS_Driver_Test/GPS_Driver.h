@@ -6,8 +6,8 @@
 #define GPS_DRIVER_H
 
 
-struct Location GPS_Get_location(TinyGPSPlus gps);
-
+struct Location GPS_Get_location();
+void displayInfo();
 struct Location
 {
  float longtude ; 
