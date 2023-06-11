@@ -1,4 +1,8 @@
 #include "Pinout.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> e22d256183e34a1c872adb2a35dcb0d9a1cb279b
 #define SOUND_SPEED 0.034
 extern void Ultrasonic_init();
 float get_ultrasonic_reading(int Trigger ,int Echo);

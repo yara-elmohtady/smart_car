@@ -4,6 +4,6 @@
 
 #define Battary_full_voltage 12
 #define ADC_Buffer 4095
-extern float Get_Battary_voltage();
+float Get_Battary_voltage();
 
 #endif //VOLTAGE_H
