@@ -7,7 +7,7 @@ float Get_Battary_voltage()
 {
   static float Sensor_Value = 0;
   static float Battary_voltage = 0;
-  analog.read(VOLTAGR_SENSOR_PIN);
+  Sensor_Value = analog.read(VOLTAGR_SENSOR_PIN);
   // voltage equation 
   Battary_voltage = (Sensor_Value * Battary_full_voltage )/ADC_Buffer
 
