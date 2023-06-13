@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 
 //sender phone number with country code
-const String PHONE = "ENTER_PHONE_HERE";
+const String PHONE = "+201063712440";
 
 //GSM Module RX pin to Arduino 3
 //GSM Module TX pin to Arduino 2
@@ -9,15 +9,14 @@ const String PHONE = "ENTER_PHONE_HERE";
 #define txPin D3
 SoftwareSerial sim800(rxPin,txPin);
 
-#define RELAY_1 D4
-#define RELAY_2 D5
+#define RELAY_1 D6
+#define RELAY_2 D7
 
 String smsStatus,senderNumber,receivedDate,msg;
 boolean isReply = false;
 
 void setup() {
-  digitalWrite(RELAY_1, HIGH);
-  digitalWrite(RELAY_2, HIGH);
+  
   delay(7000);
   
   Serial.begin(115200);
@@ -41,6 +40,10 @@ void setup() {
   delay(1000);
   sim800.println("AT+CMGDA= \"DEL ALL\"");
   delay(1000);
+  digitalWrite(D6,LOW);
+    digitalWrite(D7,LOW);
+
+
 }
 
 void loop() {
