@@ -18,8 +18,8 @@ pinMode(D7,OUTPUT) ; //  Motor in4
 */
 
 Serial.begin(9600);
-analigWrite(D7,0);
-analigWrite(D8,0);
+analogWrite(D7,0);
+analogWrite(D8,0);
 }
 
 void loop() {
@@ -66,7 +66,7 @@ void loop() {
   digitalWrite(D5,LOW) ; // DIR Motor 1 motor stop
   digitalWrite(D6,HIGH) ; // DIR Motor 2 motor stop
   Moto_Speed(150,100);
-  //delay(10000);
+  delay(10000);
  
 
 
@@ -76,9 +76,9 @@ void loop() {
 
 void Moto_Speed(int speed , int time)
 {
-  analigWrite(D7,speed);
-  analigWrite(D8,speed);
+  analogWrite(D7,speed);
+  analogWrite(D8,speed);
   delayMicroseconds(time);
-  analigWrite(D7,0);
-  analigWrite(D8,0);
+  analogWrite(D7,0);
+  analogWrite(D8,0);
 }
