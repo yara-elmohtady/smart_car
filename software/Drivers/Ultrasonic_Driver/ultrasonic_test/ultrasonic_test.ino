@@ -1,8 +1,5 @@
 #include "Pinout.h"
-<<<<<<< HEAD
-=======
 
->>>>>>> e22d256183e34a1c872adb2a35dcb0d9a1cb279b
 #define SOUND_SPEED 0.034
 extern void Ultrasonic_init();
 float get_ultrasonic_reading(int Trigger ,int Echo);
@@ -11,7 +8,27 @@ void setup() {
   // put your setup code here, to run once:
   Ultrasonic_init();
   Serial.begin(115200);
-}
+
+
+#define SOUND_SPEED 0.034
+
+
+extern struct Ultrasonic_Distance Ultrasonic_Scan_Front();
+extern struct Ultrasonic_Distance Ultrasonic_Scan_Back();
+
+void Ultrasonic_Trigger_Front();
+void Ultrasonic_Trigger_Back();
+
+    
+  struct Ultrasonic_Distance ;
+  float Front_distance1 ;
+  float Front_distance2 ;
+  float Front_distance3 ;
+
+  float Back_distance1 ;
+  float Back_distance2 ;
+    
+}      
 
 void loop() {
   // put your main code here, to run repeatedly:
