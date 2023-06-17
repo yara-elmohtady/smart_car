@@ -15,6 +15,9 @@ extern void Car_motion_turn_left();
 extern void Car_motion_stop();
 extern void Car_motion_manipulation(int angle) ;
 
+void Car_motion_reverse_left();
+void Car_motion_reverse_right();
+
 void Car_motion_acceleration_full();
 void Car_motion_acceleration_Right();
 void Car_motion_acceleration_Left();

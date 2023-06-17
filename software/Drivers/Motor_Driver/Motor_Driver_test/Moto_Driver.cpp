@@ -41,7 +41,7 @@ void Car_motion_backword()
     Car_motion_acceleration_full();
 }
 
-void Car_motion_turn_right()
+void Car_motion_turn_left()
 {
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
@@ -50,13 +50,28 @@ void Car_motion_turn_right()
 }
 
 
-void Car_motion_turn_left()
+void Car_motion_turn_right()
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
     Car_motion_acceleration_Right();
 }
 
+void Car_motion_reverse_right()
+{
+    digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
+    digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
+    
+    Car_motion_acceleration_Left();
+}
+
+
+void Car_motion_reverse_left()
+{
+    digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
+    digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
+    Car_motion_acceleration_Right();
+}
 
 void Car_motion_stop()
 {
@@ -91,7 +106,37 @@ void Car_motion_acceleration_Left()
 
 void Car_motion_manipulation(int angle)
 {
+    // angle 1 == manuplate right
+    // angle 2 == manuplate left
+    // angle 3 == manuplate reverse left
+    // angle 4 == manuplate reverse Right
     
+    if (angle == 1)
+    {
+        Car_motion_turn_right();
+        delayMicroseconds(1000);
+        Car_motion_stop();
+    }
+    else if (angle == 1)
+    {
+        Car_motion_turn_left();
+        delayMicroseconds(1000);
+        Car_motion_stop();
+    }
+    else if (angle == 3)
+    {
+        Car_motion_reverse_rleft();
+        delayMicroseconds(1000);
+        Car_motion_stop();
+    }
+    else if (angle == 4)
+    {
+        Car_motion_reverse_right();
+        delayMicroseconds(1000);
+        Car_motion_stop();
+    }
+    
+
 }
 
 // End of file
