@@ -1,8 +1,8 @@
 // Pinout defenitions
 
 
-#define Motor_Driver_Right_PWM 2
-#define Motor_Driver_Left_PWM 14
+#define Motor_Driver_Right_PWM 2 
+#define Motor_Driver_Left_PWM 14 
 
 
 // Motor R F
