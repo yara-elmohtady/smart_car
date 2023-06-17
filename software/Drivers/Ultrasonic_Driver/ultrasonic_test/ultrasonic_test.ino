@@ -4,7 +4,7 @@
 void setup() 
 {
     Ultrasonic_init();
-    Serial.begin(115200)
+    Serial.begin(115200);
 }      
 
 void loop() 

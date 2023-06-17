@@ -54,13 +54,4 @@ float get_ultrasonic_Back_reading()
 
 
 
-float get_ultrasonic_reading(int Trigger ,int Echo)
-{
-  
-  Serial.println("=================") ;
-  Serial.println("Function reading :") ;
-  Serial.println(distanceCm) ;
-  Serial.println("=================") ;
-  
-  return distanceCm ;
-}
+
