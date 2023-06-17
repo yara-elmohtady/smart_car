@@ -4,7 +4,7 @@
 void setup() {
     // put your setup code here, to run once:
     Motor_Driver_init();
-    Serial.begin(9600);
+    Serial.begin(115200);
 }
 
 void loop() {
