@@ -1,42 +1,22 @@
-#include <TinyGPS++.h>
-#include <SoftwareSerial.h>
-
-TinyGPSPlus gps;
-SoftwareSerial SerialGPS(D2, D3); 
-
-
-float Latitude , Longitude;
-String LatitudeString , LongitudeString;
-
-
+#include "GPS_Driver.h"
 
 void setup()
 {
   Serial.begin(9600);
-  SerialGPS.begin(9600);
-  Serial.println();
-  
+  GPS_init();
 }
 
 void loop()
 {
-  while (SerialGPS.available() > 0)
-    if (gps.encode(SerialGPS.read()))
-    {
-      if (gps.location.isValid())
-      {
-        Latitude = gps.location.lat();
-        LatitudeString = String(Latitude , 6);
-        Longitude = gps.location.lng();
-        LongitudeString = String(Longitude , 6);
+  float longtude ; 
+  float latitude ; 
 
-        Serial.println(Latitude);
-        Serial.println(LatitudeString);
-        Serial.println(Longitude);
-        Serial.println(LongitudeString);
-      }
+  Get_GPS_Location(&longtude ,&latitude) ;
 
-   }   
+  Serial.println("Longtude = ");
+  Serial.println(longtude);
+  Serial.println("latitude = ");
+  Serial.println(latitude);
 }
       
 
