@@ -91,7 +91,7 @@ void Car_motion_acceleration_Left()
 
 void Car_motion_manipulation(int angle)
 {
-    return 0 ; 
+    
 }
 
 // End of file
