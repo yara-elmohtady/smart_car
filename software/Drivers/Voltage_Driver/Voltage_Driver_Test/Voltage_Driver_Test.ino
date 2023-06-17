@@ -1,6 +1,4 @@
-//#include "Arduino.h"
-#define Battary_full_voltage 12
-#define ADC_Buffer 4095
+#include "Voltage_Driver.h"
 
 
 // Voltage_Sensor
@@ -13,18 +11,10 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  float Battary_Voltage =0.0 ; 
-   static float Sensor_Value = 0;
-  
-  Sensor_Value = analogRead(VOLTAGR_SENSOR_PIN);
-  Serial.println("Sensor_Value");
-    Serial.println(Sensor_Value);
+    float Battery_value ;
+    Battery_value = Get_Battary_voltage();
 
-  // voltage equation 
-  //Battary_Voltage = (Sensor_Value * Battary_full_voltage )/ADC_Buffer;
- Battary_Voltage = (((9*Sensor_Value)-1980)/598)+3;
-   Serial.println(Battary_Voltage);
-     
+    Serial.println("Voltage =");
+    Serial.println(Battery_value);
 
 }

@@ -5,11 +5,13 @@
 
 float Get_Battary_voltage()
 {
-  static float Sensor_Value = 0;
-  static float Battary_voltage = 0;
-  Sensor_Value = analog.read(VOLTAGR_SENSOR_PIN);
-  // voltage equation
-  Battary_voltage = (Sensor_Value * Battary_full_voltage )/ADC_Buffer
-
-  return Battary_voltage;
+    // put your main code here, to run repeatedly:
+    float Battary_Voltage =0.0 ; 
+    static float Sensor_Value = 0;
+  
+    Sensor_Value = analogRead(VOLTAGR_SENSOR_PIN);
+    // voltage equation 
+    Battary_Voltage = (((9*Sensor_Value)-1980)/598)+3;
+  
+    return Battary_Voltage;
 }
