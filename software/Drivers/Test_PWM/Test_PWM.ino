@@ -1,84 +1,86 @@
 
-// in1,4 forward
-// in2,3 backword
-void Moto_Speed(int speed , int time);
-void setup() {
-pinMode(D3,OUTPUT) ; // Motor in1
-pinMode(D4,OUTPUT) ; //  Motor in2
-pinMode(D5,OUTPUT) ; // Motor in3
-pinMode(D6,OUTPUT) ; //  Motor in4
 
-pinMode(D7,OUTPUT) ; // Motor in3
-pinMode(D8,OUTPUT) ; //  Motor in4
-/*
-pinMode(D4,OUTPUT) ; // Motor in1
-pinMode(D5,OUTPUT) ; //  Motor in2
-pinMode(D6,OUTPUT) ; // Motor in3
-pinMode(D7,OUTPUT) ; //  Motor in4
-*/
+#define in1 D0
+#define in2 D1
+#define in3 D2
+#define in4 D3
+
+#define ENA D4
+#define ENB D5
+
+
+void Moto_Speed(int speed , int time);
+
+void setup() {
+pinMode(in1,OUTPUT) ; 
+pinMode(in2,OUTPUT) ; 
+pinMode(in3,OUTPUT) ; 
+pinMode(in4,OUTPUT) ; 
+
+pinMode(ENA,OUTPUT) ; 
+pinMode(ENB,OUTPUT) ; 
 
 Serial.begin(9600);
-analogWrite(D7,0);
-analogWrite(D8,0);
+
+analogWrite(ENA,0);
+analogWrite(ENB,0);
 }
 
 void loop() {
 
-
+  // Stop 
   Serial.println("Motor stop") ;
-  // Right wheel
-  digitalWrite(D3,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D4,HIGH) ; // DIR Motor 2 motor stop
-  digitalWrite(D5,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D6,HIGH) ; // DIR Motor 2 motor stop
-  delay(10000);
-  /*
-  Serial.println("Forward") ;
-  digitalWrite(D3,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D4,LOW) ; // DIR Motor 2 motor stop
-
-  digitalWrite(D5,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D6,LOW) ; // DIR Motor 2 motor stop
+  digitalWrite(in1,HIGH) ; 
+  digitalWrite(in2,HIGH) ; 
+  digitalWrite(in3,HIGH) ; 
+  digitalWrite(in4,HIGH) ; 
+  Moto_Speed(0);
   delay(10000);
 
-  Serial.println("Backword") ;
-  digitalWrite(D3,LOW) ; // DIR Motor 1 motor stop
-  digitalWrite(D4,HIGH) ; // DIR Motor 2 motor stop
-
-  digitalWrite(D5,LOW) ; // DIR Motor 1 motor stop
-  digitalWrite(D6,HIGH) ; // DIR Motor 2 motor stop
+  // Forward 
+  Serial.println("Motor Forward") ;
+  digitalWrite(in1,HIGH) ; 
+  digitalWrite(in2,LOW) ; 
+  digitalWrite(in3,HIGH) ; 
+  digitalWrite(in4,LOW) ; 
+  Moto_Speed(160);
   delay(10000);
 
-  Serial.println("Turn Right") ;
-  digitalWrite(D3,LOW) ; // DIR Motor 1 motor stop
-  digitalWrite(D4,HIGH) ; // DIR Motor 2 motor stop
-
-  digitalWrite(D5,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D6,LOW) ; // DIR Motor 2 motor stop
+    // Backword 
+  Serial.println("Motor Backword") ;
+  digitalWrite(in1,LOW) ; 
+  digitalWrite(in2,HIGH) ; 
+  digitalWrite(in3,LOW) ; 
+  digitalWrite(in4,HIGH) ; 
+  Moto_Speed(160);
   delay(10000);
-*/
 
-  Serial.println("Turn left") ;
-  
-  digitalWrite(D3,HIGH) ; // DIR Motor 1 motor stop
-  digitalWrite(D4,LOW) ; // DIR Motor 2 motor stop
-
-  digitalWrite(D5,LOW) ; // DIR Motor 1 motor stop
-  digitalWrite(D6,HIGH) ; // DIR Motor 2 motor stop
-  Moto_Speed(150,100);
+    // Turn right 
+  Serial.println("Motor right") ;
+  digitalWrite(in1,HIGH) ; 
+  digitalWrite(in2,HIGH) ; 
+  digitalWrite(in3,HIGH) ; 
+  digitalWrite(in4,LOW) ; 
+  Moto_Speed(160);
   delay(10000);
- 
+
+
+    // Turn left 
+  Serial.println("Motor left") ;
+  digitalWrite(in1,HIGH) ; 
+  digitalWrite(in2,LOW) ; 
+  digitalWrite(in3,HIGH) ; 
+  digitalWrite(in4,HIGH) ; 
+  Moto_Speed(160);
+  delay(10000);
 
 
 }
 
 
 
-void Moto_Speed(int speed , int time)
+void Moto_Speed(int speed)
 {
-  analogWrite(D7,speed);
-  analogWrite(D8,speed);
-  delayMicroseconds(time);
-  analogWrite(D7,0);
-  analogWrite(D8,0);
+  analogWrite(ENA,speed);
+  analogWrite(ENB,speed);
 }
