@@ -1,8 +1,8 @@
 // Pinout defenitions
 
 
-#define Motor_Driver_Right_PWM 2 
-#define Motor_Driver_Left_PWM 14 
+#define Motor_Driver_Right_PWM 2 // D4 PWM Left wheel ENA
+#define Motor_Driver_Left_PWM 14  // D5 pwm Right wheel ENB
 
 
 // Motor R F
