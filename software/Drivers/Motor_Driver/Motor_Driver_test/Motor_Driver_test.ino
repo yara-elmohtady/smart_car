@@ -14,7 +14,7 @@ void setup() {
 
 void loop() {
     // put your main code here, to run repeatedly:
-    
+    /*
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(255);
     delay(10000);
@@ -62,7 +62,7 @@ void loop() {
     delay(10000);
     Car_motion_stop();
     delay(10000);
-    
+    */
   
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(160);
@@ -92,7 +92,7 @@ void loop() {
 
     
 
-   
+   /*
 
     Serial.println("Car_motion_forward");
     Car_motion_forward(255);
@@ -118,5 +118,5 @@ void loop() {
    Car_motion_manipulation(4);
 
     delay(10000);
-    
+    */
 }
