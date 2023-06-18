@@ -83,7 +83,11 @@ void loop() {
     Car_motion_stop();
 
     delay(1000);
+
     
+
+   
+
     Serial.println("Car_motion_forward");
     Car_motion_forward();
    delay(10000);
