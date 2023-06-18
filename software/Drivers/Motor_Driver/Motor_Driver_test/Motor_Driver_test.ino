@@ -14,7 +14,7 @@ void setup() {
 
 void loop() {
     // put your main code here, to run repeatedly:
-    /*
+    
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(255);
     delay(10000);
@@ -59,53 +59,64 @@ void loop() {
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(220);
+    delay(10000);
     Car_motion_stop();
     delay(10000);
-    delay(100000);
     
-    */
+  
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(160);
-    delay(10000);
+    delay(5000);
     Serial.println("Car_motion_stop");
     Car_motion_stop();
+    delay(5000);
     Serial.println("Car_motion_backword");
     Car_motion_backword(255);
-    delay(10000);
+    delay(5000);
     Serial.println("Car_motion_stop");
     Car_motion_stop();
+    delay(5000);
     Serial.println("Car_motion_turn_right");
     Car_motion_turn_right(255);
-    delay(10000);
+    delay(5000);
     Serial.println("Car_motion_stop");
     Car_motion_stop();
+    delay(5000);
     Serial.println("Car_motion_turn_left");
     Car_motion_turn_left(255);
-    delay(10000);
+    delay(5000);
     Serial.println("Car_motion_stop");
     Car_motion_stop();
 
-    delay(1000);
+    delay(10000);
 
     
 
    
 
     Serial.println("Car_motion_forward");
-    Car_motion_forward();
-   delay(10000);
+    Car_motion_forward(255);
+   delay(5000);
+   Car_motion_stop();
+    delay(5000);
    Serial.println("angle 1 == manuplate right");
    Car_motion_manipulation(1);
     delay(10000);
+    Car_motion_stop();
+    delay(5000);
     Serial.println("angle 2 == manuplate Left");
    Car_motion_manipulation(2);
     delay(10000);
+    Car_motion_stop();
+    delay(5000);
     Serial.println("angle 3 == manuplate reverse left");
    Car_motion_manipulation(3);
     delay(10000);
+    Car_motion_stop();
+    delay(5000);
     Serial.println("angle 4 == manuplate reverse Right");
    Car_motion_manipulation(4);
 
     delay(10000);
-    */
+    
 }

@@ -125,26 +125,30 @@ void Car_motion_manipulation(int angle)
     
     if (angle == 1)
     {
-        Car_motion_turn_right(11);
-        delayMicroseconds(1000);
+        Car_motion_turn_right(100);
+        //delayMicroseconds(1000);
+        delay(500);
         Car_motion_stop();
     }
     else if (angle == 1)
     {
-        Car_motion_turn_left(11);
-        delayMicroseconds(1000);
+        Car_motion_turn_left(100);
+        //delayMicroseconds(1000);
+        delay(500);
         Car_motion_stop();
     }
     else if (angle == 3)
     {
-        Car_motion_reverse_left(11);
-        delayMicroseconds(1000);
+        Car_motion_reverse_left(100);
+        //delayMicroseconds(1000);
+        delay(500);
         Car_motion_stop();
     }
     else if (angle == 4)
     {
-        Car_motion_reverse_right(11);
-        delayMicroseconds(1000);
+        Car_motion_reverse_right(100);
+        //delayMicroseconds(1000);
+        delay(500);
         Car_motion_stop();
     }
     
