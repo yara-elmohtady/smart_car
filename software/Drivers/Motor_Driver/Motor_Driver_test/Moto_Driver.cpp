@@ -19,7 +19,7 @@ pinMode(Motor_Driver_Left_PWM,OUTPUT);
 }
 
 
-void Car_motion_forward()
+void Car_motion_forward(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
@@ -27,10 +27,10 @@ void Car_motion_forward()
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
     
-    Car_motion_acceleration_full();
+    Car_motion_acceleration_full(speed);
 }
 
-void Car_motion_backword()
+void Car_motion_backword(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,LOW);
     digitalWrite(Motor_Driver_Right_Dir_in2,HIGH);
@@ -38,39 +38,39 @@ void Car_motion_backword()
     digitalWrite(Motor_Driver_Left_Dir_in3,LOW);
     digitalWrite(Motor_Driver_Left_Dir_in4,HIGH);
     
-    Car_motion_acceleration_full();
+    Car_motion_acceleration_full( speed);
 }
 
-void Car_motion_turn_left()
+void Car_motion_turn_left(int speed)
 {
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
     
-    Car_motion_acceleration_Left();
+    Car_motion_acceleration_Left( speed);
 }
 
 
-void Car_motion_turn_right()
+void Car_motion_turn_right(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
-    Car_motion_acceleration_Right();
+    Car_motion_acceleration_Right( speed);
 }
 
-void Car_motion_reverse_right()
+void Car_motion_reverse_right(int speed)
 {
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
     
-    Car_motion_acceleration_Left();
+    Car_motion_acceleration_Left( speed);
 }
 
 
-void Car_motion_reverse_left()
+void Car_motion_reverse_left(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
-    Car_motion_acceleration_Right();
+    Car_motion_acceleration_Right( speed);
 }
 
 void Car_motion_stop()
@@ -87,20 +87,20 @@ void Car_motion_stop()
 }
 
 
-void Car_motion_acceleration_full()
+void Car_motion_acceleration_full(int speed)
 {
-    analogWrite(Motor_Driver_Right_PWM,Motor_speed);
-    analogWrite(Motor_Driver_Left_PWM,Motor_speed);
+    analogWrite(Motor_Driver_Right_PWM,speed);
+    analogWrite(Motor_Driver_Left_PWM,speed);
 }
 
-void Car_motion_acceleration_Right()
+void Car_motion_acceleration_Right(int speed)
 {
-  analogWrite(Motor_Driver_Right_PWM,Motor_speed);
+  analogWrite(Motor_Driver_Right_PWM,speed);
 }
 
-void Car_motion_acceleration_Left()
+void Car_motion_acceleration_Left(int speed)
 {
-   analogWrite(Motor_Driver_Left_PWM,Motor_speed);
+   analogWrite(Motor_Driver_Left_PWM,speed);
 }
 
 
