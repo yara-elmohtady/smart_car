@@ -45,6 +45,9 @@ void Car_motion_turn_left(int speed)
 {
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
+
+    digitalWrite(Motor_Driver_Right_Dir_in1,LOW);
+    digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
     
     Car_motion_acceleration_Left( speed);
 }
@@ -54,6 +57,9 @@ void Car_motion_turn_right(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
+
+    digitalWrite(Motor_Driver_Left_Dir_in3,LOW);
+    digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
     Car_motion_acceleration_Right( speed);
 }
 
@@ -61,6 +67,9 @@ void Car_motion_reverse_right(int speed)
 {
     digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
     digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
+
+    digitalWrite(Motor_Driver_Right_Dir_in1,LOW);
+    digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
     
     Car_motion_acceleration_Left( speed);
 }
@@ -70,17 +79,20 @@ void Car_motion_reverse_left(int speed)
 {
     digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
     digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
+
+    digitalWrite(Motor_Driver_Left_Dir_in3,LOW);
+    digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
     Car_motion_acceleration_Right( speed);
 }
 
 void Car_motion_stop()
 {
     // Car stop
-    digitalWrite(Motor_Driver_Right_Dir_in1,LOW);
-    digitalWrite(Motor_Driver_Right_Dir_in2,LOW);
+    digitalWrite(Motor_Driver_Right_Dir_in1,HIGH);
+    digitalWrite(Motor_Driver_Right_Dir_in2,HIGH);
 
-    digitalWrite(Motor_Driver_Left_Dir_in3,LOW);
-    digitalWrite(Motor_Driver_Left_Dir_in4,LOW);
+    digitalWrite(Motor_Driver_Left_Dir_in3,HIGH);
+    digitalWrite(Motor_Driver_Left_Dir_in4,HIGH);
 
     analogWrite(Motor_Driver_Right_PWM,0);
     analogWrite(Motor_Driver_Left_PWM,0);
