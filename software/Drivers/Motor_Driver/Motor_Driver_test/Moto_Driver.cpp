@@ -125,7 +125,7 @@ void Car_motion_manipulation(int angle)
     }
     else if (angle == 3)
     {
-        Car_motion_reverse_left();
+        Car_motion_reverse_rleft();
         delayMicroseconds(1000);
         Car_motion_stop();
     }

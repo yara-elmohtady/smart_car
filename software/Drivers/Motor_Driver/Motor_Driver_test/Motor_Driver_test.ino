@@ -9,7 +9,7 @@
 void setup() {
     // put your setup code here, to run once:
     Motor_Driver_init();
-    Serial.begin(9600);
+    Serial.begin(115200);
 }
 
 void loop() {
@@ -38,8 +38,8 @@ void loop() {
 
     delay(1000);
     */
-    //Serial.println("Car_motion_forward");
-   // Car_motion_forward();
+    Serial.println("Car_motion_forward");
+    Car_motion_forward();
    delay(10000);
    Serial.println("angle 1 == manuplate right");
    Car_motion_manipulation(1);
