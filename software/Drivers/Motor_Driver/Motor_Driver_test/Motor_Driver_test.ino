@@ -18,33 +18,48 @@ void loop() {
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(255);
     delay(10000);
+    Car_motion_stop();
+    delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(50);
+    delay(10000);
+    Car_motion_stop();
     delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(70);
     delay(10000);
+    Car_motion_stop();
+    delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(100);
+    delay(10000);
+    Car_motion_stop();
     delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(150);
     delay(10000);
+    Car_motion_stop();
+    delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(170);
+    delay(10000);
+    Car_motion_stop();
     delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(200);
     delay(10000);
+    Car_motion_stop();
+    delay(10000);
 
     Serial.println("Car_motion_forward 255");
     Car_motion_forward(220);
+    Car_motion_stop();
     delay(10000);
     delay(100000);
     
