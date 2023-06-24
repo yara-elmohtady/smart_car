@@ -12,11 +12,15 @@
 #define Road_BA W
 #define Road_AF S
 
+void Get_Path_plan(char start , char end , char * Trip_path_exe);
+void Define_start_stop_cordinate(char start , char end);
+void Define_Path_plan(void);
 
-
-
+//path = Endpoint-Start point 
+// Endpoint_Y - StartpointY =  {if -ve -> s if +ve -> N } (value of move )
+// Endpoint_X - StartpoinXY =  {if -ve -> W if +ve -> E } (value of move )
 /*
-A (long , lat )              B (long , lat )                   C (long , lat )    
+A (1 , 2 )              B (2 , 2 ) {charging}          C (3 , 2 )    
 
                                   |N
                                   |
@@ -27,6 +31,9 @@ A (long , lat )              B (long , lat )                   C (long , lat )
                                   |S
 
 
-F (long , lat )             E (long , lat )                    D (long , lat ) 
+F (1 , 1 )             E (2 , 1 )                    D (3 , 1 ) 
 
 */
+
+
+       

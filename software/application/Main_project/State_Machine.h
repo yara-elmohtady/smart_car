@@ -13,3 +13,6 @@
 void Update_State_Macine();
 void Set_State_Macine(char State);
 void State_Macine_init();
+void State_Machine_main_Task();
+void Adjust_Car_Direction(char cur , char Dir);
+void State_Machine_Sub_Task();

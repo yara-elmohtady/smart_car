@@ -6,7 +6,7 @@
 
 
 TinyGPSPlus gps;
-SoftwareSerial SerialGPS(D2, D3); 
+SoftwareSerial SerialGPS(GPS_RXPin, GPS_TXPin); 
 
 void GPS_init()
 {

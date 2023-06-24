@@ -24,6 +24,7 @@
 #define ULTRASONIC_B1_ECHO 9      //SD2
 #define ULTRASONIC_B1_TRIGGER D8
 
-
+#define BT_RX D9
+#define BT_TX D10
 // Voltage_Sensor
 #define VOLTAGR_SENSOR_PIN A0
